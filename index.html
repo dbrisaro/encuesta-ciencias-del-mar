@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor de encuesta: ciencias del mar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="bar">
+  <h1><span contenteditable="true" data-kind="docTitle"></span></h1>
+  <div class="actions">
+    <button data-act="md">Descargar Markdown</button>
+    <button data-act="json" class="ghost">Descargar JSON</button>
+    <button data-act="import" class="ghost">Importar JSON</button>
+  </div>
+  <div class="status" id="status">Cargando...</div>
+</header>
+
+<details class="scales">
+  <summary>Escalas compartidas (editar acá cambia la vista previa en toda la encuesta)</summary>
+  <div id="scalesPanel"></div>
+</details>
+
+<div class="layout">
+  <nav class="rail" id="rail"></nav>
+  <main>
+    <p class="hint">Toca cualquier texto para editarlo. Usá los controles de cada pregunta para mover, borrar o cambiar el tipo de respuesta. Para conservar los cambios, descargá el JSON y reemplazá survey.json en el repositorio.</p>
+    <div id="sections"></div>
+  </main>
+</div>
+
+<input type="file" id="fileInput" accept="application/json,.json" style="display:none">
+
+<script src="app.js"></script>
+</body>
+</html>

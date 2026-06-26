@@ -1,0 +1,204 @@
+{
+  "title": "Encuesta: barreras en el desarrollo de carreras tempranas en ciencias del mar en Argentina",
+  "scales": {
+    "agreement": ["Totalmente en desacuerdo", "En desacuerdo", "Ni de acuerdo ni en desacuerdo", "De acuerdo", "Totalmente de acuerdo"],
+    "frequency": ["Nunca", "Rara vez", "A veces", "A menudo", "Casi siempre", "Prefiero no responder"],
+    "access": ["Sin dificultad", "Con cierta dificultad", "Con mucha dificultad", "No tengo acceso", "No aplica a mi trabajo"]
+  },
+  "sections": [
+    {
+      "id": "Inicio",
+      "kind": "text",
+      "title": "Presentación y consentimiento",
+      "content": "Esta encuesta busca caracterizar las condiciones en las que se desarrollan las personas en etapas tempranas de su carrera en ciencias del mar en Argentina. Es anónima y voluntaria. Podés saltear cualquier pregunta y abandonar la encuesta en cualquier momento sin consecuencias. Los datos se analizarán de forma agregada y se utilizarán con fines de investigación y de discusión sobre políticas científicas. Completarla toma aproximadamente XX minutos.\n\nAlgunas secciones incluyen preguntas sobre bienestar, ambiente de trabajo y experiencias que pueden resultar sensibles. Todas esas preguntas son opcionales. Al final de cada sección sensible vas a encontrar recursos de apoyo.\n\nAl continuar, confirmás que leíste esta información y que aceptás participar.\n\n[ ] Acepto participar"
+    },
+    {
+      "id": "Elig",
+      "kind": "questions",
+      "title": "Filtro de elegibilidad",
+      "note": "",
+      "items": [
+        {"type": "choice", "text": "¿Cuál de estas opciones describe mejor tu situación actual?", "options": ["Estudiante avanzado/a de grado vinculado/a a investigación", "Doctorando/a", "Becario/a posdoctoral", "Investigador/a en etapa inicial (por ejemplo: asistente, o hasta aproximadamente 8 años desde el doctorado)", "Personal técnico en etapa inicial", "Ninguna de las anteriores"]},
+        {"type": "note", "team": true, "text": "\"Ninguna de las anteriores\" cierra la encuesta con un mensaje de agradecimiento. Ajustar el umbral de 8 años a la definición operativa final o a las categorías de CONICET."}
+      ]
+    },
+    {
+      "id": "A",
+      "kind": "questions",
+      "title": "Sección A: Perfil",
+      "note": "Todas las personas responden esta sección.",
+      "items": [
+        {"type": "choice", "text": "Edad", "options": ["Menos de 25", "25 a 29", "30 a 34", "35 a 39", "40 o más", "Prefiero no responder"]},
+        {"type": "choice", "text": "Género", "options": ["Mujer", "Varón", "Identidad no binaria", "Otra", "Prefiero no responder"]},
+        {"type": "open", "text": "Provincia o región donde trabajás actualmente"},
+        {"type": "open", "text": "Institución (opcional)"},
+        {"type": "choice", "text": "Disciplina principal", "options": ["Oceanografía física", "Biología marina", "Química marina", "Geología marina", "Pesquerías", "Ciencias atmosféricas vinculadas al océano", "Otra"]},
+        {"type": "open", "text": "Posición o cargo actual"},
+        {"type": "choice", "text": "Tipo de financiamiento principal", "options": ["Beca doctoral", "Beca posdoctoral", "Contrato", "Cargo en planta", "Sin financiamiento específico", "Otro"]},
+        {"type": "choice", "text": "Fuente principal de financiamiento", "options": ["CONICET", "Universidad", "Agencia nacional", "Organismo o proyecto internacional", "Otra"]},
+        {"type": "choice", "text": "Años desde que iniciaste tu actividad en investigación", "options": ["Menos de 2", "2 a 4", "5 a 8", "Más de 8"]}
+      ]
+    },
+    {
+      "id": "Perc",
+      "kind": "questions",
+      "title": "Ítem de percepción general",
+      "note": "Todas las personas responden este ítem. No funciona como filtro: todas las secciones siguientes se responden con independencia de esta respuesta.",
+      "items": [
+        {"type": "choice", "text": "En términos generales, ¿en qué medida considerás que actualmente existen barreras para el desarrollo de la carrera de jóvenes investigadores e investigadoras en ciencias del mar en Argentina?", "options": ["No existen barreras significativas", "Existen barreras leves", "Existen barreras moderadas", "Existen barreras severas"]},
+        {"type": "note", "team": true, "text": "Registrar como variable. El único punto donde esta respuesta deriva el recorrido es en las preguntas abiertas del final."}
+      ]
+    },
+    {
+      "id": "B",
+      "kind": "questions",
+      "title": "Sección B: Condiciones laborales y económicas",
+      "note": "",
+      "items": [
+        {"type": "agreement", "text": "Mi situación laboral actual es estable."},
+        {"type": "agreement", "text": "Mis ingresos por mi trabajo científico alcanzan para cubrir mis gastos básicos."},
+        {"type": "agreement", "text": "Cuento con financiamiento suficiente para llevar adelante mi investigación."},
+        {"type": "agreement", "text": "Conté con financiamiento para asistir a congresos cuando lo necesité.", "extra": ["No necesité asistir a congresos en este período"]},
+        {"type": "agreement", "text": "Tengo certeza sobre la continuidad de mi situación laboral en los próximos 12 meses."},
+        {"type": "choice", "text": "¿Tenés otro trabajo remunerado además de tu actividad científica principal?", "options": ["No", "Sí, relacionado con mi formación", "Sí, no relacionado con mi formación"]}
+      ]
+    },
+    {
+      "id": "C",
+      "kind": "questions",
+      "title": "Sección C: Infraestructura y acceso científico",
+      "note": "Para cada recurso, indicá tu nivel de acceso actual.",
+      "items": [
+        {"type": "access", "text": "Un lugar de trabajo adecuado"},
+        {"type": "access", "text": "Campañas o salidas de campo"},
+        {"type": "access", "text": "Buques de investigación"},
+        {"type": "access", "text": "Laboratorios"},
+        {"type": "access", "text": "Instrumental y equipamiento"},
+        {"type": "access", "text": "Software y licencias"},
+        {"type": "access", "text": "Datos (satelitales, observacionales u otros)"},
+        {"type": "access", "text": "Formación técnica"}
+      ]
+    },
+    {
+      "id": "D",
+      "kind": "questions",
+      "title": "Sección D: Exigencias del sistema científico y evaluación",
+      "note": "",
+      "items": [
+        {"type": "agreement", "text": "Siento presión por publicar de forma constante."},
+        {"type": "agreement", "text": "Siento presión por publicar en revistas de alto impacto (Q1)."},
+        {"type": "agreement", "text": "Considero que la evaluación de mi trabajo se basa excesivamente en métricas cuantitativas."},
+        {"type": "agreement", "text": "Me resulta difícil equilibrar la calidad y la cantidad de mi producción."},
+        {"type": "agreement", "text": "Siento presión por internacionalizar mi trabajo."},
+        {"type": "agreement", "text": "El requerimiento de publicar y comunicar en inglés representa una dificultad para mí."},
+        {"type": "agreement", "text": "Percibo el sistema científico como altamente competitivo."},
+        {"type": "agreement", "text": "Los criterios de evaluación del sistema científico me resultan claros y justos."}
+      ]
+    },
+    {
+      "id": "E",
+      "kind": "questions",
+      "title": "Sección E: Relaciones laborales y ambiente de trabajo",
+      "note": "Esta sección es opcional. Trata sobre el ambiente de trabajo y puede incluir experiencias sensibles. Podés saltear cualquier pregunta. Tus respuestas son anónimas y no se solicita identificar a ninguna persona.",
+      "items": [
+        {"type": "agreement", "text": "Recibo apoyo adecuado de mi supervisor/a o director/a."},
+        {"type": "agreement", "text": "La mentoría que recibo es de buena calidad."},
+        {"type": "agreement", "text": "Me siento integrado/a en mi grupo de trabajo."},
+        {"type": "agreement", "text": "Mi trabajo es reconocido apropiadamente."},
+        {"type": "agreement", "text": "Las tareas en mi grupo se distribuyen de forma equitativa."},
+        {"type": "agreement", "text": "Me siento aislado/a en mi entorno de trabajo."},
+        {"type": "note", "text": "En tu entorno académico actual o reciente, ¿con qué frecuencia experimentaste las siguientes situaciones?"},
+        {"type": "frequency", "text": "Que se atribuyera tu trabajo o tu autoría a otra persona."},
+        {"type": "frequency", "text": "Exigencias desproporcionadas o ajenas a tus responsabilidades."},
+        {"type": "frequency", "text": "Trato descalificador o humillante."},
+        {"type": "frequency", "text": "Presión para realizar tareas no remuneradas o fuera de tu rol."},
+        {"type": "note", "team": true, "text": "Ítems de frecuencia redactados en términos conductuales, sin pedir que la persona aplique una categoría como abuso o acoso. No incluir campos que identifiquen a terceros."},
+        {"type": "note", "text": "Si alguna de estas preguntas te movilizó y querés hablar con alguien, podés contactar [INSERTAR recurso institucional] o [INSERTAR línea de apoyo vigente]."}
+      ]
+    },
+    {
+      "id": "F",
+      "kind": "questions",
+      "title": "Sección F: Género y desigualdades",
+      "note": "Esta sección es opcional y puede incluir experiencias sensibles. Podés saltear cualquier pregunta. Tus respuestas son anónimas.",
+      "items": [
+        {"type": "agreement", "text": "En mi entorno, las oportunidades se distribuyen independientemente del género."},
+        {"type": "agreement", "text": "En mi entorno, las posiciones de liderazgo reflejan diversidad de géneros."},
+        {"type": "note", "text": "En tu ámbito profesional, ¿con qué frecuencia viviste situaciones como las siguientes?"},
+        {"type": "frequency", "text": "Comentarios o trato diferente asociados a tu género."},
+        {"type": "frequency", "text": "Que tus aportes fueran ignorados o atribuidos a otra persona."},
+        {"type": "frequency", "text": "Exclusión de espacios de decisión o de redes informales."},
+        {"type": "agreement", "text": "Las responsabilidades de cuidado afectaron el desarrollo de mi carrera.", "extra": ["No aplica a mi situación"]},
+        {"type": "agreement", "text": "Durante el trabajo de campo o campañas me sentí seguro/a y cómodo/a.", "extra": ["No realicé trabajo de campo o campañas"]},
+        {"type": "note", "team": true, "text": "Mismo criterio que la sección E. Medir experiencias concretas, no autodiagnóstico ni autocategorización."},
+        {"type": "note", "text": "Si alguna de estas preguntas te movilizó y querés hablar con alguien, podés contactar [INSERTAR recurso institucional] o [INSERTAR línea de apoyo vigente]."}
+      ]
+    },
+    {
+      "id": "G",
+      "kind": "questions",
+      "title": "Sección G: Federalismo y desigualdad regional",
+      "note": "",
+      "items": [
+        {"type": "agreement", "text": "Las oportunidades de desarrollo científico están distribuidas de forma equitativa entre las regiones del país."},
+        {"type": "agreement", "text": "El sistema científico en ciencias del mar está excesivamente centralizado en Buenos Aires o el AMBA."},
+        {"type": "agreement", "text": "El acceso a infraestructura depende fuertemente de la región donde se trabaja."},
+        {"type": "choice", "text": "¿Tuviste que mudarte dentro del país para acceder a oportunidades científicas?", "options": ["Sí", "No", "Lo estoy considerando"]}
+      ]
+    },
+    {
+      "id": "H",
+      "kind": "questions",
+      "title": "Sección H: Movilidad y colaboraciones",
+      "note": "",
+      "items": [
+        {"type": "agreement", "text": "Tengo acceso a redes de colaboración internacionales."},
+        {"type": "agreement", "text": "Las barreras económicas limitan mi movilidad nacional o internacional."},
+        {"type": "agreement", "text": "El idioma (inglés u otros) limita mi capacidad de colaborar internacionalmente."},
+        {"type": "scale", "text": "En los últimos 3 años, ¿con qué frecuencia pudiste realizar estadías, campañas o colaboraciones fuera de tu institución?", "options": ["Nunca", "Una vez", "Algunas veces", "De forma frecuente"]}
+      ]
+    },
+    {
+      "id": "I",
+      "kind": "questions",
+      "title": "Sección I: Bienestar y perspectivas futuras",
+      "note": "Esta sección es opcional y trata sobre bienestar y perspectivas a futuro. Podés saltear cualquier pregunta. Las preguntas se refieren a cómo te sentiste recientemente; no constituyen una evaluación clínica ni un diagnóstico.",
+      "items": [
+        {"type": "placeholder", "text": "I.1 Estrés percibido. Insertar la versión oficial validada en español de la Perceived Stress Scale, PSS-10 (Cohen, Kamarck y Mermelstein, 1983). Ventana: último mes. Puntaje 0 a 4 por ítem, invertir los ítems positivos, sumar. No reescribir los ítems."},
+        {"type": "placeholder", "text": "I.2 Bienestar subjetivo. Insertar la versión oficial en español del WHO-5 Wellbeing Index. Ventana: últimas dos semanas. Puntaje 0 a 5 por ítem, sumar y multiplicar por 4 para un índice de 0 a 100. No reescribir los ítems."},
+        {"type": "placeholder", "text": "I.3 Burnout. Insertar la versión validada en español del Copenhagen Burnout Inventory (CBI, Kristensen et al., 2005), subescalas personal y vinculada al trabajo. Uso libre para investigación. No usar el Maslach Burnout Inventory por ser propietario."},
+        {"type": "note", "text": "I.4 Ítems específicos del estudio."},
+        {"type": "agreement", "text": "Considerando todo, me siento conforme con mi situación profesional actual."},
+        {"type": "agreement", "text": "Logro mantener un equilibrio satisfactorio entre mi vida personal y mi trabajo."},
+        {"type": "agreement", "text": "Siento incertidumbre respecto de mi continuidad en el sistema científico."},
+        {"type": "scale", "text": "En los próximos 3 años, ¿qué tan probable es que intentes desarrollar tu carrera científica fuera de Argentina?", "options": ["Nada probable", "Poco probable", "Algo probable", "Bastante probable", "Muy probable"]},
+        {"type": "scale", "text": "En los próximos 3 años, ¿qué tan probable es que dejes la carrera científica o académica?", "options": ["Nada probable", "Poco probable", "Algo probable", "Bastante probable", "Muy probable"]},
+        {"type": "scale", "text": "¿Cómo ves el desarrollo de las ciencias del mar en Argentina en los próximos 10 años?", "options": ["Muy pesimista", "Pesimista", "Neutral", "Optimista", "Muy optimista"]},
+        {"type": "note", "text": "Si alguna de estas preguntas te movilizó y querés hablar con alguien, podés contactar [INSERTAR recurso institucional de tu universidad o instituto] o [INSERTAR línea de apoyo de salud mental vigente en Argentina]."}
+      ]
+    },
+    {
+      "id": "Abrt",
+      "kind": "questions",
+      "title": "Preguntas abiertas",
+      "note": "Ruteo: quienes respondieron \"No existen barreras significativas\" en el ítem de percepción ven la versión neutral (1b). El resto ve la versión estándar (1a).",
+      "items": [
+        {"type": "open", "text": "1a. (versión estándar) ¿Cuál considerás que es actualmente el principal desafío para desarrollar una carrera en ciencias del mar en Argentina?"},
+        {"type": "open", "text": "1b. (versión neutral) ¿Qué aspectos considerás más relevantes, positivos o negativos, para desarrollar una carrera en ciencias del mar en Argentina hoy?"},
+        {"type": "open", "text": "2. ¿Qué aspectos del sistema científico considerás que deberían cambiar prioritariamente?"}
+      ]
+    },
+    {
+      "id": "Fin",
+      "kind": "text",
+      "title": "Cierre",
+      "content": "Gracias por tu tiempo y por tus respuestas. Tu participación contribuye a visibilizar las condiciones de desarrollo en las ciencias del mar en Argentina."
+    },
+    {
+      "id": "Notas",
+      "kind": "text",
+      "title": "Notas metodológicas para el equipo",
+      "content": "Tener en cuenta la dirección de cada ítem al construir índices o comparar. Algunos están redactados en sentido positivo (mayor acuerdo indica mejores condiciones, por ejemplo B1 a B5, D8, E1 a E5, F1, F2, F7, G1, H1) y otros en sentido negativo. Revisar e invertir el puntaje según corresponda antes de sumar.\n\nLos ítems sobre idioma D6 (publicar y comunicar) y H3 (colaborar) miden dominios distintos de forma intencional. Conservar ambos.\n\nEn la sección C, mayor dificultad de acceso indica peores condiciones; \"No aplica a mi trabajo\" se trata como categoría aparte, no como valor extremo.\n\nMantener separadas las variables de condiciones (B, C, D) y de bienestar (I). Reportar asociaciones, nunca causalidad ni prevalencia clínica.\n\nVerificar la vigencia de los recursos de apoyo antes de publicar. No incluir afirmaciones sobre confidencialidad de las líneas de apoyo."
+    }
+  ]
+}
