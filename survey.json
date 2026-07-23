@@ -18,7 +18,7 @@
       "title": "Filtro de elegibilidad",
       "note": "",
       "items": [
-        {"type": "choice", "text": "¿Cuál de estas opciones describe mejor tu situación actual?", "options": ["Estudiante avanzado/a de grado vinculado/a a investigación", "Doctorando/a", "Becario/a posdoctoral", "Investigador/a en etapa inicial (por ejemplo: asistente, o hasta aproximadamente 8 años desde el doctorado)", "Personal técnico en etapa inicial", "Ninguna de las anteriores"]},
+        {"type": "choice", "text": "¿Cuál de estas opciones describe mejor tu situación actual en Argentina?", "options": ["Estudiante avanzado/a de grado vinculado/a a investigación", "Estudiante de maestría", "Doctorando/a", "Becario/a posdoctoral", "Investigador/a en etapa inicial (por ejemplo: asistente, o hasta aproximadamente 8 años desde el doctorado)", "Personal técnico en etapa inicial", "Ninguna de las anteriores"]},
         {"type": "note", "team": true, "text": "\"Ninguna de las anteriores\" cierra la encuesta con un mensaje de agradecimiento. Ajustar el umbral de 8 años a la definición operativa final o a las categorías de CONICET."}
       ]
     },
@@ -29,10 +29,13 @@
       "note": "Todas las personas responden esta sección.",
       "items": [
         {"type": "choice", "text": "Edad", "options": ["Menos de 25", "25 a 29", "30 a 34", "35 a 39", "40 o más", "Prefiero no responder"]},
-        {"type": "choice", "text": "Género", "options": ["Mujer", "Varón", "Identidad no binaria", "Otra", "Prefiero no responder"]},
-        {"type": "open", "text": "Provincia o región donde trabajás actualmente"},
+        {"type": "choice", "text": "Sexo asignado al nacer", "options": ["Femenino", "Masculino", "Intersex", "Prefiero no responder"]},
+        {"type": "choice", "text": "Identidad de género", "options": ["Mujer", "Varón", "Identidad no binaria", "Otra", "Prefiero no responder"]},
+        {"type": "choice", "text": "Provincia o jurisdicción donde trabajás actualmente", "options": ["Buenos Aires", "Ciudad Autónoma de Buenos Aires", "Catamarca", "Chaco", "Chubut", "Córdoba", "Corrientes", "Entre Ríos", "Formosa", "Jujuy", "La Pampa", "La Rioja", "Mendoza", "Misiones", "Neuquén", "Río Negro", "Salta", "San Juan", "San Luis", "Santa Cruz", "Santa Fe", "Santiago del Estero", "Tierra del Fuego", "Tucumán", "Prefiero no responder"]},
         {"type": "open", "text": "Institución (opcional)"},
         {"type": "choice", "text": "Disciplina principal", "options": ["Oceanografía física", "Biología marina", "Química marina", "Geología marina", "Pesquerías", "Ciencias atmosféricas vinculadas al océano", "Otra"]},
+        {"type": "choice", "text": "Disciplina secundaria (opcional)", "options": ["Oceanografía física", "Biología marina", "Química marina", "Geología marina", "Pesquerías", "Ciencias atmosféricas vinculadas al océano", "Ninguna", "Otra"]},
+        {"type": "note", "team": true, "text": "Las categorías de disciplina requieren una sesión de brainstorming: hoy se solapan (por ejemplo biología marina y pesquerías) y tienen distintos niveles de resolución, lo que puede llevar a que se elija distinto para un mismo tipo de trabajo o se abuse de \"Otra\". Definir un set consensuado antes de publicar. La disciplina secundaria se agregó para representar investigaciones interdisciplinarias."},
         {"type": "open", "text": "Posición o cargo actual"},
         {"type": "choice", "text": "Tipo de financiamiento principal", "options": ["Beca doctoral", "Beca posdoctoral", "Contrato", "Cargo en planta", "Sin financiamiento específico", "Otro"]},
         {"type": "choice", "text": "Fuente principal de financiamiento", "options": ["CONICET", "Universidad", "Agencia nacional", "Organismo o proyecto internacional", "Otra"]},
@@ -59,7 +62,8 @@
         {"type": "agreement", "text": "Mis ingresos por mi trabajo científico alcanzan para cubrir mis gastos básicos."},
         {"type": "agreement", "text": "Cuento con financiamiento suficiente para llevar adelante mi investigación."},
         {"type": "agreement", "text": "Conté con financiamiento para asistir a congresos cuando lo necesité.", "extra": ["No necesité asistir a congresos en este período"]},
-        {"type": "agreement", "text": "Tengo certeza sobre la continuidad de mi situación laboral en los próximos 12 meses."},
+        {"type": "agreement", "text": "Pude cubrir los costos de publicación (APC u otros cargos) en las revistas donde quise publicar, sin que el costo fuera un impedimento.", "extra": ["No necesité publicar en este período"]},
+        {"type": "agreement", "text": "Tengo certeza sobre la continuidad de mi salario, beca o cargo (más allá del financiamiento para investigación) en los próximos 12 meses."},
         {"type": "choice", "text": "¿Tenés otro trabajo remunerado además de tu actividad científica principal?", "options": ["No", "Sí, relacionado con mi formación", "Sí, no relacionado con mi formación"]}
       ]
     },
@@ -73,7 +77,7 @@
         {"type": "access", "text": "Campañas o salidas de campo"},
         {"type": "access", "text": "Buques de investigación"},
         {"type": "access", "text": "Laboratorios"},
-        {"type": "access", "text": "Instrumental y equipamiento"},
+        {"type": "access", "text": "Instrumental, equipamiento e insumos"},
         {"type": "access", "text": "Software y licencias"},
         {"type": "access", "text": "Datos (satelitales, observacionales u otros)"},
         {"type": "access", "text": "Formación técnica"}
@@ -106,7 +110,6 @@
         {"type": "agreement", "text": "Me siento integrado/a en mi grupo de trabajo."},
         {"type": "agreement", "text": "Mi trabajo es reconocido apropiadamente."},
         {"type": "agreement", "text": "Las tareas en mi grupo se distribuyen de forma equitativa."},
-        {"type": "agreement", "text": "Me siento aislado/a en mi entorno de trabajo."},
         {"type": "note", "text": "En tu entorno académico actual o reciente, ¿con qué frecuencia experimentaste las siguientes situaciones?"},
         {"type": "frequency", "text": "Que se atribuyera tu trabajo o tu autoría a otra persona."},
         {"type": "frequency", "text": "Exigencias desproporcionadas o ajenas a tus responsabilidades."},
@@ -155,6 +158,7 @@
         {"type": "agreement", "text": "Tengo acceso a redes de colaboración internacionales."},
         {"type": "agreement", "text": "Las barreras económicas limitan mi movilidad nacional o internacional."},
         {"type": "agreement", "text": "El idioma (inglés u otros) limita mi capacidad de colaborar internacionalmente."},
+        {"type": "agreement", "text": "La obtención de visas representa una barrera para mi movilidad o para colaborar internacionalmente.", "extra": ["No aplica a mi situación"]},
         {"type": "scale", "text": "En los últimos 3 años, ¿con qué frecuencia pudiste realizar estadías, campañas o colaboraciones fuera de tu institución?", "options": ["Nunca", "Una vez", "Algunas veces", "De forma frecuente"]}
       ]
     },
@@ -185,7 +189,7 @@
       "items": [
         {"type": "open", "text": "1a. (versión estándar) ¿Cuál considerás que es actualmente el principal desafío para desarrollar una carrera en ciencias del mar en Argentina?"},
         {"type": "open", "text": "1b. (versión neutral) ¿Qué aspectos considerás más relevantes, positivos o negativos, para desarrollar una carrera en ciencias del mar en Argentina hoy?"},
-        {"type": "open", "text": "2. ¿Qué aspectos del sistema científico considerás que deberían cambiar prioritariamente?"}
+        {"type": "open", "text": "2. Mencioná hasta 3 aspectos del sistema científico que considerás que deberían cambiar prioritariamente. Para cada uno, indicá en qué dirección debería cambiar (por ejemplo: qué habría que hacer o hacia dónde tendría que ir)."}
       ]
     },
     {
@@ -198,7 +202,7 @@
       "id": "Notas",
       "kind": "text",
       "title": "Notas metodológicas para el equipo",
-      "content": "Tener en cuenta la dirección de cada ítem al construir índices o comparar. Algunos están redactados en sentido positivo (mayor acuerdo indica mejores condiciones, por ejemplo B1 a B5, D8, E1 a E5, F1, F2, F7, G1, H1) y otros en sentido negativo. Revisar e invertir el puntaje según corresponda antes de sumar.\n\nLos ítems sobre idioma D6 (publicar y comunicar) y H3 (colaborar) miden dominios distintos de forma intencional. Conservar ambos.\n\nEn la sección C, mayor dificultad de acceso indica peores condiciones; \"No aplica a mi trabajo\" se trata como categoría aparte, no como valor extremo.\n\nMantener separadas las variables de condiciones (B, C, D) y de bienestar (I). Reportar asociaciones, nunca causalidad ni prevalencia clínica.\n\nVerificar la vigencia de los recursos de apoyo antes de publicar. No incluir afirmaciones sobre confidencialidad de las líneas de apoyo."
+      "content": "Tener en cuenta la dirección de cada ítem al construir índices o comparar. Algunos están redactados en sentido positivo (mayor acuerdo indica mejores condiciones, por ejemplo B1 a B6, D8, E1 a E5, F1, F2, F7, G1, H1) y otros en sentido negativo. Revisar e invertir el puntaje según corresponda antes de sumar.\n\nLos ítems sobre idioma D6 (publicar y comunicar) y H3 (colaborar) miden dominios distintos de forma intencional. Conservar ambos.\n\nEn la sección C, mayor dificultad de acceso indica peores condiciones; \"No aplica a mi trabajo\" se trata como categoría aparte, no como valor extremo.\n\nMantener separadas las variables de condiciones (B, C, D) y de bienestar (I). Reportar asociaciones, nunca causalidad ni prevalencia clínica.\n\nVerificar la vigencia de los recursos de apoyo antes de publicar. No incluir afirmaciones sobre confidencialidad de las líneas de apoyo."
     }
   ]
 }
