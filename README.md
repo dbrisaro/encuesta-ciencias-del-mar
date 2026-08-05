@@ -1,17 +1,17 @@
-# Editor de la encuesta de ciencias del mar
+# Encuesta de ciencias del mar: visor del cuestionario
 
-Herramienta interna para diseñar y revisar el cuestionario sobre barreras en el desarrollo de carreras tempranas en ciencias del mar en Argentina.
+Herramienta interna para revisar el cuestionario sobre barreras en el desarrollo de carreras tempranas en ciencias del mar en Argentina.
 
-Importante: esta es la herramienta de edición y vista previa del cuestionario. No es la encuesta que completan las personas ni recolecta respuestas. Sirve para que el equipo acuerde la versión final del instrumento.
+Importante: esta es una vista de solo lectura del instrumento. No es la encuesta que completan las personas ni recolecta respuestas. Sirve para que el equipo lea y acuerde la versión final del cuestionario.
 
 ## Qué hay en el repositorio
 
 - `survey.json`: el contenido del cuestionario. Es la única fuente de verdad. Todo cambio acordado se aplica acá.
-- `index.html`, `styles.css`, `app.js`: la herramienta que muestra y edita `survey.json`. Normalmente no hace falta tocarlos.
+- `index.html`, `styles.css`, `app.js`: el visor que muestra `survey.json`. Normalmente no hace falta tocarlos.
 
 ## Cómo verla
 
-La herramienta lee `survey.json`, así que necesita un servidor local (no funciona abriendo `index.html` con doble clic).
+El visor lee `survey.json`, así que necesita un servidor local (no funciona abriendo `index.html` con doble clic).
 
 Opción 1, local. Desde la carpeta del proyecto:
 
@@ -21,9 +21,11 @@ y abrir http://localhost:8000 en el navegador.
 
 Opción 2, en línea. La versión publicada está en [INSERTAR URL de GitHub Pages o Cloudflare Pages]. Ese enlace siempre muestra la versión más reciente acordada.
 
+El botón "Descargar Markdown" genera una versión legible del instrumento en un archivo de texto, para compartir o imprimir.
+
 ## Flujo de trabajo: proponer y luego aplicar
 
-Por ahora la idea es que el equipo revise el cuestionario, no que lo edite en paralelo. Para no terminar con versiones distintas, seguimos este circuito:
+El visor no permite editar: se lee desde el navegador y los cambios se aplican sobre `survey.json`. Circuito:
 
 1. Todes pueden abrir el enlace y revisar el cuestionario cuando quieran.
 2. Si alguien quiere un cambio, lo propone: por un issue en este repositorio, por mensaje, o por mail. Conviene indicar la sección y la pregunta.
@@ -36,22 +38,27 @@ Responsable del repositorio: [INSERTAR nombre].
 
 ## Cómo se aplican los cambios (para la persona responsable)
 
-Hay dos maneras, equivalentes:
+Editar `survey.json` con un editor de texto y hacer commit. Es un archivo JSON: conviene validarlo antes de subirlo, por ejemplo con
 
-- Editar `survey.json` directamente con un editor de texto y hacer commit.
-- Abrir la herramienta, hacer los cambios tocando el texto y los controles, usar el botón "Descargar JSON", reemplazar `survey.json` del repositorio con el archivo descargado y hacer commit.
+    python3 -m json.tool survey.json > /dev/null
 
-El botón "Descargar Markdown" genera una versión legible del instrumento para compartir o revisar. Esa versión es solo de lectura: la herramienta no la vuelve a importar, solo importa JSON.
-
-Recordatorio: los cambios hechos en el navegador no se guardan solos. Si no descargás el JSON y reemplazás el archivo, se pierden al cerrar.
+Si no devuelve nada, el archivo está bien formado.
 
 ## Estructura de `survey.json`
 
 - `title`: título del cuestionario.
-- `scales`: las escalas compartidas (`agreement`, `frequency`, `access`). Editar una etiqueta acá cambia la vista previa en todas las preguntas que usan esa escala.
+- `scales`: las escalas compartidas (`agreement`, `frequency`, `access`). Cambiar una etiqueta acá la cambia en todas las preguntas que usan esa escala.
 - `sections`: lista de secciones. Cada sección tiene `id` (la etiqueta corta de la barra lateral), `title`, y `kind` que puede ser `text` (con `content`) o `questions` (con `note` y una lista `items`).
-- Cada item tiene un `type`: `agreement`, `frequency`, `access` (usan las escalas compartidas), `choice` y `scale` (llevan su propia lista `options`), `open` (respuesta abierta), `placeholder` (escala validada a insertar) y `note` (texto que no es pregunta). Un item puede tener `extra` para opciones adicionales (por ejemplo "No aplica"). Una `note` con `team: true` es una nota para el equipo, no para quien responde.
+- Cada item tiene un `type`:
+  - `agreement`, `frequency`, `access`: usan las escalas compartidas.
+  - `choice`: opción única, con su propia lista `options`.
+  - `multi`: selección múltiple, con `options` y `max` (cantidad máxima de opciones elegibles).
+  - `scale`: escala propia de la pregunta, con su propia lista `options`.
+  - `open`: respuesta abierta.
+  - `placeholder`: escala validada que hay que insertar textualmente.
+  - `note`: texto que no es pregunta. Con `team: true` es una nota interna del equipo, no para quien responde; en el visor aparece en un bloque amarillo.
+- Un item puede tener `extra` con opciones adicionales (por ejemplo "No aplica").
 
 ## Las escalas validadas
 
-I.1, I.2 e I.3 aparecen como marcadores a propósito. Hay que insertar las versiones oficiales en español de PSS-10, WHO-5 y CBI, sin reescribir sus ítems, para no perder la validez de las escalas.
+La sección I incluye un `placeholder` para el WHO-5: hay que insertar la versión oficial en español sin reescribir sus ítems, para no perder la validez de la escala. La nota del equipo en esa sección explica por qué se eligió el WHO-5 y se descartaron PSS-10 y CBI.
