@@ -1,6 +1,6 @@
 const typeLabels = {
   agreement:"Acuerdo", frequency:"Frecuencia", access:"Acceso",
-  choice:"Opción única", multi:"Selección múltiple", scale:"Escala propia",
+  who5:"WHO-5", choice:"Opción única", multi:"Selección múltiple", scale:"Escala propia",
   open:"Respuesta abierta", note:"Nota", placeholder:"Escala validada"
 };
 
@@ -47,8 +47,8 @@ function renderItem(item,qnum){
     return '<div class="item"><div class="item-row"><div class="item-num">'+qnum+'</div><div class="note-team" style="flex:1"><b>Escala validada:</b> '+esc(item.text)+'</div></div></div>';
   }
   let body='<div class="item"><div class="item-row"><div class="item-num">'+qnum+'</div><div class="item-text">'+esc(item.text)+'</div><div class="item-type">'+esc(typeLabels[item.type]||item.type)+'</div></div>';
-  if(item.type==="agreement"||item.type==="frequency"||item.type==="access"){
-    body+='<div class="pill-label">escala: '+esc(typeLabels[item.type])+'</div><div class="pills">';
+  if(data.scales[item.type]){
+    body+='<div class="pill-label">escala: '+esc(typeLabels[item.type]||item.type)+'</div><div class="pills">';
     data.scales[item.type].forEach(o=>{body+=pill(o);});
     body+='</div>';
     if(item.extra&&item.extra.length){
@@ -121,8 +121,8 @@ function downloadMarkdown(){
       qnum++;
       if(item.type==="placeholder"){m+="\n"+qnum+". [Escala validada] "+item.text+"\n";return;}
       m+="\n"+qnum+". "+item.text+"\n";
-      if(item.type==="agreement"||item.type==="frequency"||item.type==="access"){
-        m+="   "+typeLabels[item.type]+": "+data.scales[item.type].join(" / ")+"\n";
+      if(data.scales[item.type]){
+        m+="   "+(typeLabels[item.type]||item.type)+": "+data.scales[item.type].join(" / ")+"\n";
         if(item.extra&&item.extra.length)m+="   Opciones adicionales: "+item.extra.join(" / ")+"\n";
       }else if(item.type==="choice"||item.type==="scale"||item.type==="multi"){
         if(item.type==="multi")m+="   [selección múltiple, máximo "+(item.max||3)+"]\n";
