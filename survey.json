@@ -66,7 +66,8 @@
         {"type": "agreement", "text": "Cuento con financiamiento suficiente para llevar adelante mi investigación."},
         {"type": "agreement", "text": "Conté con financiamiento para asistir a congresos cuando lo necesité.", "extra": ["No necesité asistir a congresos en este período"]},
         {"type": "agreement", "text": "Pude cubrir los costos de publicación (APC u otros cargos) en las revistas donde quise publicar, sin que el costo fuera un impedimento.", "extra": ["No necesité publicar en este período"]},
-        {"type": "choice", "text": "¿Tenés otro trabajo remunerado además de tu actividad científica principal?", "options": ["No", "Sí, relacionado con mi formación", "Sí, no relacionado con mi formación"]}
+        {"type": "choice", "text": "¿Tenés otro trabajo remunerado además de tu actividad científica principal?", "options": ["No", "Sí, relacionado con mi formación", "Sí, no relacionado con mi formación"]},
+        {"type": "choice", "text": "¿Tenés personas a cargo (hijos/as, adultos mayores, personas con discapacidad)?", "options": ["No", "Sí, una", "Sí, dos o más"]}
       ]
     },
     {
