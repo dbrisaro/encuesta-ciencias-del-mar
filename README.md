@@ -52,7 +52,7 @@ Si no devuelve nada, el archivo está bien formado.
 - Cada item tiene un `type`:
   - `agreement`, `frequency`, `access`, `who5`: usan las escalas compartidas definidas en `scales`. Para agregar una escala nueva basta con sumarla a `scales` y usar su nombre como `type`.
   - `choice`: opción única, con su propia lista `options`.
-  - `multi`: selección múltiple, con `options` y `max` (cantidad máxima de opciones elegibles).
+  - `multi`: selección múltiple, con `options` y, opcionalmente, `max` (cantidad máxima de opciones elegibles). Sin `max` no hay límite.
   - `scale`: escala propia de la pregunta, con su propia lista `options`.
   - `open`: respuesta abierta.
   - `placeholder`: escala validada pendiente de insertar textualmente. Hoy no hay ninguna.
@@ -63,6 +63,6 @@ Si no devuelve nada, el archivo está bien formado.
 
 La sección I incluye el WHO-5 (OMS cinco, Índice de Bienestar, versión 1998) en su traducción oficial al español publicada por la OMS. Desde 2024 es un producto de acceso abierto de la OMS.
 
-Los 5 ítems y las 6 categorías de respuesta están transcriptos textualmente y no deben reescribirse ni reordenarse: si se cambian, se pierde la comparabilidad con la literatura publicada. Puntaje: 5 (Todo el tiempo) a 0 (Nunca), sumar los 5 ítems y multiplicar por 4 para obtener un índice de 0 a 100. Ningún ítem se invierte. Hay que incluir la atribución a la OMS donde se publique el instrumento y los resultados; el detalle está en la nota del equipo de la sección I.
+Los 5 ítems y las 6 categorías de respuesta están transcriptos textualmente (con la única excepción del desdoblamiento de género en los adjetivos de los ítems 2, 3 y 4, decidido por el equipo) y no deben reescribirse ni reordenarse: si se cambian, se pierde la comparabilidad con la literatura publicada. Puntaje: 5 (Todo el tiempo) a 0 (Nunca), sumar los 5 ítems y multiplicar por 4 para obtener un índice de 0 a 100. Ningún ítem se invierte. Hay que incluir la atribución a la OMS donde se publique el instrumento y los resultados; el detalle está en la nota del equipo de la sección I.
 
 Se descartaron la PSS-10 y el Copenhagen Burnout Inventory para no extender la sección: los tres instrumentos juntos sumaban 28 ítems de redacción fija.

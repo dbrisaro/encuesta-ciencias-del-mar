@@ -57,7 +57,7 @@ function renderItem(item,qnum){
       body+='</div>';
     }
   } else if(item.type==="choice"||item.type==="scale"||item.type==="multi"){
-    body+='<div class="pill-label">opciones'+(item.type==="multi"?" (selección múltiple, máximo "+(item.max||3)+")":"")+'</div><div class="pills">';
+    body+='<div class="pill-label">opciones'+(item.type==="multi"?" (selección múltiple"+(item.max?", máximo "+item.max:"")+")":"")+'</div><div class="pills">';
     (item.options||[]).forEach(o=>{body+=pill(o);});
     body+='</div>';
   } else if(item.type==="open"){
@@ -125,7 +125,7 @@ function downloadMarkdown(){
         m+="   "+(typeLabels[item.type]||item.type)+": "+data.scales[item.type].join(" / ")+"\n";
         if(item.extra&&item.extra.length)m+="   Opciones adicionales: "+item.extra.join(" / ")+"\n";
       }else if(item.type==="choice"||item.type==="scale"||item.type==="multi"){
-        if(item.type==="multi")m+="   [selección múltiple, máximo "+(item.max||3)+"]\n";
+        if(item.type==="multi")m+="   [selección múltiple"+(item.max?", máximo "+item.max:"")+"]\n";
         (item.options||[]).forEach(op=>{m+="   - "+op+"\n";});
       }else if(item.type==="open"){m+="   [respuesta abierta]\n";}
     });
